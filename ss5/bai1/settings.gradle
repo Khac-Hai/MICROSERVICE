@@ -1,0 +1,37 @@
+pluginManagement {
+
+    repositories {
+
+        gradlePluginPortal()
+
+        mavenCentral()
+
+    }
+
+}
+
+
+dependencyResolutionManagement {
+
+    repositoriesMode.set(
+            RepositoriesMode.FAIL_ON_PROJECT_REPOS
+    )
+
+
+    repositories {
+
+        mavenCentral()
+
+    }
+
+}
+
+
+rootProject.name = 'microservices-platform'
+
+
+include 'eureka-server'
+
+include 'api-gateway'
+
+include 'customer-service'

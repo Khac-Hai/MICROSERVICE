@@ -1,0 +1,58 @@
+plugins {
+
+    id 'java'
+
+    id 'org.springframework.boot'
+
+    id 'io.spring.dependency-management'
+
+}
+
+
+java {
+
+    sourceCompatibility = JavaVersion.VERSION_17
+
+}
+
+
+dependencyManagement {
+
+    imports {
+
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2023.0.3"
+
+    }
+
+}
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+    runtimeOnly 'org.postgresql:postgresql'
+
+    compileOnly 'org.projectlombok:lombok'
+
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+
+tasks.named('bootJar') {
+    enabled = true
+    archiveFileName = 'customer-service.jar'
+}
+
+tasks.named('jar') {
+    enabled = false
+}
