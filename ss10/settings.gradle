@@ -1,0 +1,5 @@
+rootProject.name = 'pharmacy-kafka'
+
+include 'common'
+include 'inventory-service'
+include 'notification-service'

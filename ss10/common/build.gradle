@@ -1,0 +1,14 @@
+plugins {
+	id 'java'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+dependencies {
+	// For JSON serialization support in OrderEvent
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+}
